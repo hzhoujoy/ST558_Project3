@@ -20,8 +20,7 @@ params = lapply(EducationLv, FUN = function(x){list(Edu = x)})
 reports <- tibble::tibble(output_file, params)
 reports
 apply(reports, MARGIN = 1,
-      FUN = function(x){
-				render(input = "work.Rmd", 
+      FUN = function(x){render(input = "work.Rmd", 
 				output_file = x[[1]], 
 				params = x[[2]])
  				})
@@ -30,4 +29,4 @@ apply(reports, MARGIN = 1,
 links to .html files of the generated analyses (which will be created by github pages! Not you!)
 For example,
 
-Analysis for [work.md](https://hzhoujoy.github.io/ST558_Project3/work.md). Note you should only have a college_graduate_analysis.md file in the repo - github pages will render the .html file for you              
+Analysis for [work.md]("work.md"). Note you should only have a college_graduate_analysis.md file in the repo - github pages will render the .html file for you              
