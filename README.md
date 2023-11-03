@@ -29,4 +29,4 @@ apply(reports, MARGIN = 1,
 links to .html files of the generated analyses (which will be created by github pages! Not you!)
 For example,
 
-Analysis for [work.md]("work.md"). Note you should only have a college_graduate_analysis.md file in the repo - github pages will render the .html file for you              
+Analysis for [work.md](work.html). Note you should only have a college_graduate_analysis.md file in the repo - github pages will render the .html file for you              
