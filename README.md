@@ -1,7 +1,7 @@
 author: Hui Fang/Joy Zhou
-date: 11/3/2023
+===========================
 # ST558_Project3
-
+   
 This is a repo containing work from project3 for ST558.
 
 The following R packages used for this project:
@@ -10,12 +10,12 @@ The following R packages used for this project:
 + [`shiny`](https://cran.r-project.org/web/packages/shiny/index.html)
 + [`DT`](https://rstudio.github.io/DT/)
 
-```{r}
+```
 npm install marked 
 ```
 
 The code used to create the analyses from a single .Rmd file (i.e. the render() code)
-```{r}
+```
 library(rmarkdown)
 
 EducationLv <- unique(diabetes$Education)
