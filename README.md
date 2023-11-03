@@ -30,5 +30,9 @@ links to .html files of the generated analyses (which will be created by github 
 For example,
 
 Analysis for [work.md](work.html). Note you should only have a college_graduate_analysis.md file in the repo - github pages will render the .html file for you
-[Non_Elementaty](Non_Elementaty.html)
+[Non_Elementaty](Non_Elementary.html)
+[SomeHighSchool](SomeHighSchool.html)
+[HighSchool](HighSchool.html)
+[SomeCollege](SomeCollege.html)
+[College](College)
 
