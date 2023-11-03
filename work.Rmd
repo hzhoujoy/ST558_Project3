@@ -1,8 +1,10 @@
 ---
-title: "Project 3"
-author: "Joy Zhou"
-date: "2023-10-31"
+title: "ST558_Project3"
+author: "Hui Fang/Joy Zhou"
+date: "2023-11-02"
 output: github_document
+params:
+   Edu: "Non_Elementary"
 ---
 
 ```{r setup, include=FALSE}
@@ -11,20 +13,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-The `Behavioral Risk Factor Surveillance System (BRFSS)` is an annual health-related telephone survey conducted by the Centers for Disease Control and Prevention (CDC) since 1984. It is designed to gather standardized, state-specific information on preventive health practices and risk behaviors associated with chronic diseases, injuries, and preventable infectious diseases within the adult population.
+Diabetes is a seriously pervasive chronic disease that disrupts the body’s ability to regulate blood glucose levels, leading to a diminished quality of life and reduced life expectancy. It stands as one of the most prevalent chronic illnesses in the United States, impacting millions of Americans annually and imposing a significant economic burden on the nation.  
 
-Diabetes stands as one of the most prevalent chronic diseases in the United States, affecting millions of Americans annually and imposing a substantial economic burden on the nation. 
+In this project, we will use the `diabetes binary health indicators` dataset obtained from [Kaggle]( https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset/) to conduct comprehensive exploratory data analysis (EDA) and develop predictive models. This dataset comprises 253,680 survey responses to the CDC’s BRFSS (Behavioral Risk Factor Surveillance System) from year 2015. The primary target variable, `Diabetes_binary`, offers binary classification, distinguishing between 0 for no diabetes, and 1 for prediabetes or diabetes. This dataset encompasses 21 feature variables and is not balanced. Detailed information of variable can be found [here](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset/?select=diabetes_binary_health_indicators_BRFSS2015.csv).  
 
-For this project, we will use the `diabetes _ binary _ health _ indicators _ BRFSS2015.csv` dataset, sourced from [Diabetes Health Indicators Dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset/).
+Our analysis will primarily focus on a subset of key variables, including High blood pressure (HighBP), High cholesterol (HighChol), cholesterol check (CholCheck), Body Mass Index (BMI), Smoker, Fruits, Veggies, and Age.  
+In our EDA phase, we will start by summarizing basic statistics visualizing variable frequencies. This will be followed by the exploration of correlations between variables and the creation of contingency tables to better understand the interplay of these factors.  
 
-This dataset comprises 253,680 survey responses to the CDC's BRFSS2015. The target variable `Diabetes_binary` has two classes: 0 for no diabetes, and 1 for prediabetes or diabetes. This dataset encompasses 21 feature variables and is not balanced, with Diabetes_binary serving as the response variable. The information of variable can be found [here](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset/?select=diabetes_binary_health_indicators_BRFSS2015.csv)  
-
+Based on the results from EDA, we will split the dataset into training (70%) and test (30%) subsets for each educational level. Subsequently, we will employ the training data to fit six distinct models, including a logistic regression, a LASSO logistic regression, a classification tree model, a random forest model, a xx model, as well as a xxx model. The performance of these models will be rigorously evaluated using the test dataset, and we will determine the most effective model for predicting diabetes outcomes.  
+  
+Description of variables in the data set:
 + Diabetes_binary: 0 = no diabetes 1 = prediabetes or diabetes  
 + HighBP: High blood pressure  
 + HighChol: High cholesterol   
 + CholCheck: 0 = no cholesterol check in 5 years 1 = yes cholesterol check in 5 years  
 + BMI: Body Mass Index   
-+ Smoker: Have you smoked at least 100 cigarettes in your entire life? [Note: 5 packs = 100 cigarettes] 0 = no 1 = yes  
++ Smoker: Have you smoked at least 100 cigarettes in your entire life? 0 = no 1 = yes  
 + Stroke: 0 = no 1 = yes  
 + HeartDiseaseorAttack: coronary heart disease (CHD) or myocardial infarction (MI) 0 = no 1 = yes  
 + PhysActivity: physical activity in past 30 days - not including job 0 = no 1 = yes   
@@ -49,42 +53,52 @@ library(dplyr)
 library(readr)
 diabetes <- as_tibble(read.csv("diabetes_binary_health_indicators_BRFSS2015.csv", header = TRUE))
 head(diabetes)
-Diabetes_binary <- as.factor(diabetes$Diabetes_binary)
-Income <- factor(diabetes$Income, levels = c("1", "2", "3", "4", "5", "6", "7", "8"))
+```
+
+# grouping Education levels
+```{r}
+diabetes$Education <- ifelse(diabetes$Education %in% c(1, 2), "Non_Elementary",
+                         ifelse(diabetes$Education == 3, "SomeHighSchool", 
+                              ifelse(diabetes$Education == 4, "HighSchool",
+                                   ifelse(diabetes$Education == 5, "SomeCollege",
+                                        ifelse(diabetes$Education == 6, "College", NA)))))
+
+# Convert some variables to factor
+diabetes$Education <- as.factor(diabetes$Education)
+#diabetes$Diabetes_binary <- as.factor(diabetes$Diabetes_binary)
+#diabetes$Income <- as.factor(diabetes$Income)
+diabetes$HighBP <- as.factor(diabetes$HighBP)
+diabetes$HighChol <- as.factor(diabetes$HighChol)
+diabetes$Sex <- as.factor(diabetes$Sex)
+diabetes$Fruits <- as.factor(diabetes$Fruits)
+params$Edu
 ```
 
 ## Subsetting the dataset based on education level
-
-```{r }
-# Never attended school or only kindergarten to Grades 1 through 8 (Elementary)
-diabetes1_2 <- diabetes %>% filter(Education %in% c(1, 2))
-# Grades 9 through 11 (Some high school) 
-diabetes3 <- diabetes %>% filter(Education == 3)
-# Grade 12 or GED (High school graduate) 
-diabetes4 <- diabetes %>% filter(Education == 4)
-# College 1 year to 3 years (Some college or technical school) 
-diabetes5 <- diabetes %>% filter(Education == 5)
-# College 4 years or more (College graduate) 
-diabetes6 <- diabetes %>% filter(Education == 6)
+```{r}
+EducationData <- filter(diabetes, (Education == params$Edu))
+```
+## EDA
+```{r}
+# Checking missing values of columns in diabetes2
+missing_values <- colSums(is.na(EducationData))
 ```
 
-## EDA for diabetes3
 ```{r}
-# Checking missing values of columns in diabetes3
-missing_values <- colSums(is.na(diabetes3))
-missing_values # no missing values
 # Describing 
 library(knitr)
-kable(summary(diabetes3))
+kable(summary(EducationData))
 ```
-result shows that there is no missing values in dataset diabetes3
 
 ```{r}
-# Set the figure size (in inches)
-options(repr.plot.width = 8, repr.plot.height = 6)
+# Create a correlation matrix between variables
+Cor_Matrix <- EducationData %>% 
+         select(Diabetes_binary, BMI, MentHlth, PhysHlth, Age, Income) %>%
+         cor()
 
-
-
-
+# Round the correlation matrix to two decimal places
+rounded_Cor_Matrix <- round(Cor_Matrix, digits = 2)
+# Print the rounded correlation matrix
+kable(rounded_Cor_Matrix)
 ```
 
