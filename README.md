@@ -28,11 +28,11 @@ apply(reports, MARGIN = 1,
  				
 links to .html files of the generated analyses (which will be created by github pages! Not you!)
 For example,
-
-Analysis for [work.md](work.html). Note you should only have a college_graduate_analysis.md file in the repo - github pages will render the .html file for you
-[Non_Elementaty](Non_Elementary.html)
-[SomeHighSchool](SomeHighSchool.html)
-[HighSchool](HighSchool.html)
-[SomeCollege](SomeCollege.html)
-[College](College)
+You can access the render document:   
++ Analysis for [work.md](work.html). Note you should only have a college_graduate_analysis.md file in the repo - github pages will render the .html file for you
++ Analysis for [Non_Elementaty](Non_Elementary.html)    
++ Analysis for [SomeHighSchool](SomeHighSchool.html)  
++ Analysis for [HighSchool](HighSchool.html)  
++ Analysis for [SomeCollege](SomeCollege.html)  
++ Analysis for [College](College.html)  
 
