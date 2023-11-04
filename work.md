@@ -1,6 +1,6 @@
 ST558_Project3
 ================
-Hui Fang/Joy Zhou
+Hui Fang and Joy Zhou
 2023-11-02
 
 # Introduction
@@ -42,8 +42,8 @@ performance of these models will be rigorously evaluated using the test
 dataset, and we will determine the most effective model for predicting
 diabetes outcomes.
 
-Description of variables in the data set: + Diabetes_binary: 0 = no
-diabetes 1 = prediabetes or diabetes  
+Description of variables in the data set:  
++ Diabetes_binary: 0 = no diabetes 1 = prediabetes or diabetes  
 + HighBP: High blood pressure  
 + HighChol: High cholesterol  
 + CholCheck: 0 = no cholesterol check in 5 years 1 = yes cholesterol
@@ -109,24 +109,16 @@ head(diabetes)
 # grouping Education levels
 
 ``` r
-diabetes$Education <- ifelse(diabetes$Education %in% c(1, 2), "Non_Elementary",
+diabetes$Education <- ifelse(diabetes$Education %in% c(1, 2), "SomeElementary",
                          ifelse(diabetes$Education == 3, "SomeHighSchool", 
                               ifelse(diabetes$Education == 4, "HighSchool",
                                    ifelse(diabetes$Education == 5, "SomeCollege",
                                         ifelse(diabetes$Education == 6, "College", NA)))))
 
-# Convert some variables to factor
-diabetes$Education <- as.factor(diabetes$Education)
-#diabetes$Diabetes_binary <- as.factor(diabetes$Diabetes_binary)
-#diabetes$Income <- as.factor(diabetes$Income)
-diabetes$HighBP <- as.factor(diabetes$HighBP)
-diabetes$HighChol <- as.factor(diabetes$HighChol)
-diabetes$Sex <- as.factor(diabetes$Sex)
-diabetes$Fruits <- as.factor(diabetes$Fruits)
 params$Edu
 ```
 
-    ## [1] "Non_Elementary"
+    ## [1] "SomeElementary"
 
 ## Subsetting the dataset based on education level
 
@@ -136,27 +128,68 @@ EducationData <- filter(diabetes, (Education == params$Edu))
 
 ## EDA
 
+### Checking the missing values
+
 ``` r
-# Checking missing values of columns in diabetes2
 missing_values <- colSums(is.na(EducationData))
 ```
 
+### Summary statistics for numeric variables
+
 ``` r
-# Describing 
-library(knitr)
-kable(summary(EducationData))
+library(dplyr)
+# Filter only numeric variables
+numeric_vars <- EducationData %>% select_if(is.numeric)
+# Create a summary table
+summary_table <- numeric_vars %>%
+  sapply(function(x) {
+    c( count = sum(!is.na(x)),
+      mean = mean(x, na.rm = TRUE),
+      std = sd(x, na.rm = TRUE),
+      min = min(x, na.rm = TRUE),
+      Q1 = quantile(x, 0.25, na.rm = TRUE),
+      median = median(x, na.rm = TRUE),
+      Q3 = quantile(x, 0.75, na.rm = TRUE),
+      max = max(x, na.rm = TRUE)
+    )
+  })
+# Transpose the summary table
+transposed_summary_table <- t(round(summary_table, 2)) 
+colnames(transposed_summary_table) <- c("count", "mean", "std", 
+                                        "min", "Q1", "median", "Q3", "max")
+# Print the transposed table
+print(transposed_summary_table)
 ```
 
-|     | Diabetes_binary | HighBP | HighChol | CholCheck      | BMI           | Smoker         | Stroke          | HeartDiseaseorAttack | PhysActivity   | Fruits | Veggies        | HvyAlcoholConsump | AnyHealthcare  | NoDocbcCost    | GenHlth       | MentHlth       | PhysHlth       | DiffWalk       | Sex    | Age            | Education           | Income        |
-|:----|:----------------|:-------|:---------|:---------------|:--------------|:---------------|:----------------|:---------------------|:---------------|:-------|:---------------|:------------------|:---------------|:---------------|:--------------|:---------------|:---------------|:---------------|:-------|:---------------|:--------------------|:--------------|
-|     | Min. :0.0000    | 0:1740 | 0:1965   | Min. :0.0000   | Min. :12.00   | Min. :0.0000   | Min. :0.00000   | Min. :0.0000         | Min. :0.0000   | 0:1785 | Min. :0.0000   | Min. :0.00000     | Min. :0.0000   | Min. :0.0000   | Min. :1.000   | Min. : 0.000   | Min. : 0.000   | Min. :0.0000   | 0:2283 | Min. : 1.000   | College : 0         | Min. :1.000   |
-|     | 1st Qu.:0.0000  | 1:2477 | 1:2252   | 1st Qu.:1.0000 | 1st Qu.:25.00 | 1st Qu.:0.0000 | 1st Qu.:0.00000 | 1st Qu.:0.0000       | 1st Qu.:0.0000 | 1:2432 | 1st Qu.:0.0000 | 1st Qu.:0.00000   | 1st Qu.:1.0000 | 1st Qu.:0.0000 | 1st Qu.:3.000 | 1st Qu.: 0.000 | 1st Qu.: 0.000 | 1st Qu.:0.0000 | 1:1934 | 1st Qu.: 7.000 | HighSchool : 0      | 1st Qu.:2.000 |
-|     | Median :0.0000  | NA     | NA       | Median :1.0000 | Median :28.00 | Median :0.0000 | Median :0.00000 | Median :0.0000       | Median :1.0000 | NA     | Median :1.0000 | Median :0.00000   | Median :1.0000 | Median :0.0000 | Median :4.000 | Median : 0.000 | Median : 1.000 | Median :0.0000 | NA     | Median :10.000 | Non_Elementary:4217 | Median :3.000 |
-|     | Mean :0.2917    | NA     | NA       | Mean :0.9718   | Mean :29.46   | Mean :0.4804   | Mean :0.08537   | Mean :0.1914         | Mean :0.5682   | NA     | Mean :0.6929   | Mean :0.02656     | Mean :0.8406   | Mean :0.1788   | Mean :3.471   | Mean : 5.219   | Mean : 8.368   | Mean :0.3801   | NA     | Mean : 9.111   | SomeCollege : 0     | Mean :3.313   |
-|     | 3rd Qu.:1.0000  | NA     | NA       | 3rd Qu.:1.0000 | 3rd Qu.:33.00 | 3rd Qu.:1.0000 | 3rd Qu.:0.00000 | 3rd Qu.:0.0000       | 3rd Qu.:1.0000 | NA     | 3rd Qu.:1.0000 | 3rd Qu.:0.00000   | 3rd Qu.:1.0000 | 3rd Qu.:0.0000 | 3rd Qu.:4.000 | 3rd Qu.: 5.000 | 3rd Qu.:15.000 | 3rd Qu.:1.0000 | NA     | 3rd Qu.:12.000 | SomeHighSchool: 0   | 3rd Qu.:5.000 |
-|     | Max. :1.0000    | NA     | NA       | Max. :1.0000   | Max. :84.00   | Max. :1.0000   | Max. :1.00000   | Max. :1.0000         | Max. :1.0000   | NA     | Max. :1.0000   | Max. :1.00000     | Max. :1.0000   | Max. :1.0000   | Max. :5.000   | Max. :30.000   | Max. :30.000   | Max. :1.0000   | NA     | Max. :13.000   | NA                  | Max. :8.000   |
+    ##                      count  mean   std min Q1 median Q3 max
+    ## Diabetes_binary       4217  0.29  0.45   0  0      0  1   1
+    ## HighBP                4217  0.59  0.49   0  0      1  1   1
+    ## HighChol              4217  0.53  0.50   0  0      1  1   1
+    ## CholCheck             4217  0.97  0.17   0  1      1  1   1
+    ## BMI                   4217 29.46  7.05  12 25     28 33  84
+    ## Smoker                4217  0.48  0.50   0  0      0  1   1
+    ## Stroke                4217  0.09  0.28   0  0      0  0   1
+    ## HeartDiseaseorAttack  4217  0.19  0.39   0  0      0  0   1
+    ## PhysActivity          4217  0.57  0.50   0  0      1  1   1
+    ## Fruits                4217  0.58  0.49   0  0      1  1   1
+    ## Veggies               4217  0.69  0.46   0  0      1  1   1
+    ## HvyAlcoholConsump     4217  0.03  0.16   0  0      0  0   1
+    ## AnyHealthcare         4217  0.84  0.37   0  1      1  1   1
+    ## NoDocbcCost           4217  0.18  0.38   0  0      0  0   1
+    ## GenHlth               4217  3.47  1.11   1  3      4  4   5
+    ## MentHlth              4217  5.22  9.77   0  0      0  5  30
+    ## PhysHlth              4217  8.37 11.61   0  0      1 15  30
+    ## DiffWalk              4217  0.38  0.49   0  0      0  1   1
+    ## Sex                   4217  0.46  0.50   0  0      0  1   1
+    ## Age                   4217  9.11  2.97   1  7     10 12  13
+    ## Income                4217  3.31  1.94   1  2      3  5   8
+
+The center and spread of each variable can be found in this table.
+
+### Check the correlation between Diabetes_binary and the other variables
 
 ``` r
+library(knitr)
 # Create a correlation matrix between variables
 Cor_Matrix <- EducationData %>% 
          select(Diabetes_binary, BMI, MentHlth, PhysHlth, Age, Income) %>%
@@ -176,3 +209,126 @@ kable(rounded_Cor_Matrix)
 | PhysHlth        |            0.16 |  0.08 |     0.40 |     1.00 |  0.07 |  -0.19 |
 | Age             |            0.16 | -0.12 |    -0.08 |     0.07 |  1.00 |  -0.12 |
 | Income          |           -0.15 | -0.05 |    -0.15 |    -0.19 | -0.12 |   1.00 |
+
+### Visualization of correlation with `Diabetes_binary` through bar graph
+
+``` r
+# Load required libraries
+library(ggplot2)
+# Exclude the character variable from the data
+data <- EducationData[, !(names(EducationData) %in% "Education")]
+
+# Calculate the correlation of each variable with 'Diabetes_binary'
+correlations <- sapply(data[-1], function(x) cor(x, data$Diabetes_binary))
+
+# Create a data frame for the correlations
+correlation_data <- data.frame(Variable = names(correlations), Correlation = correlations)
+
+# Create a bar chart of correlations
+ggplot(correlation_data, aes(x = Variable, y = Correlation)) +
+  geom_bar(stat = "identity", fill = "orange") +
+  labs(title = "Correlation with Diabetes_binary", x = "Variable", y = "Correlation") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+```
+
+![](work_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+``` r
+  # coord_flip()  # Rotate the x-axis labels for better readability
+```
+
+n this chart, some of the variables exhibited positive correlations with
+‘Diabetes_binary,’ while others showed negative correlations with it.
+
+### Convert some variables to factor
+
+``` r
+EducationData$Diabetes_binary <- factor(EducationData$Diabetes_binary, 
+                                           levels = c(0, 1),
+                                           labels = c("NonDiabetes", "Diabetes"))
+EducationData$Income <- as.factor(EducationData$Income)
+EducationData$Education <- as.factor(EducationData$Education)
+EducationData$HighBP <- as.factor(EducationData$HighBP)
+EducationData$HighChol <- as.factor(EducationData$HighChol)
+EducationData$Sex <- as.factor(EducationData$Sex)
+EducationData$Fruits <- as.factor(EducationData$Fruits)
+EducationData$Veggies <- as.factor(EducationData$Veggies)
+EducationData$CholCheck <- as.factor(EducationData$CholCheck)
+EducationData$Smoker <- as.factor(EducationData$Smoker)
+EducationData$Stroke <- as.factor(EducationData$Stroke)
+EducationData$HeartDiseaseorAttack <- as.factor(EducationData$HeartDiseaseorAttack)
+EducationData$PhysActivity <- as.factor(EducationData$PhysActivity)
+EducationData$HvyAlcoholConsump <- as.factor(EducationData$HvyAlcoholConsump)
+EducationData$AnyHealthcare <- as.factor(EducationData$AnyHealthcare)
+EducationData$NoDocbcCost <- as.factor(EducationData$NoDocbcCost)
+EducationData$DiffWalk <- as.factor(EducationData$DiffWalk)
+```
+
+### Summary statistics for Character variables
+
+``` r
+# one-way table
+kable(table(EducationData$Diabetes_binary))
+```
+
+| Var1        | Freq |
+|:------------|-----:|
+| NonDiabetes | 2987 |
+| Diabetes    | 1230 |
+
+``` r
+kable(table(EducationData$HighBP))
+```
+
+| Var1 | Freq |
+|:-----|-----:|
+| 0    | 1740 |
+| 1    | 2477 |
+
+``` r
+kable(table(EducationData$HighChol))
+```
+
+| Var1 | Freq |
+|:-----|-----:|
+| 0    | 1965 |
+| 1    | 2252 |
+
+``` r
+kable(table(EducationData$Fruits))
+```
+
+| Var1 | Freq |
+|:-----|-----:|
+| 0    | 1785 |
+| 1    | 2432 |
+
+``` r
+kable(table(EducationData$Veggies))
+```
+
+| Var1 | Freq |
+|:-----|-----:|
+| 0    | 1295 |
+| 1    | 2922 |
+
+``` r
+# two-way table
+kable(table(EducationData$Diabetes_binary, EducationData$Sex))
+```
+
+|             |    0 |    1 |
+|:------------|-----:|-----:|
+| NonDiabetes | 1576 | 1411 |
+| Diabetes    |  707 |  523 |
+
+``` r
+kable(table(EducationData$Diabetes_binary, EducationData$HighBP))
+```
+
+|             |    0 |    1 |
+|:------------|-----:|-----:|
+| NonDiabetes | 1472 | 1515 |
+| Diabetes    |  268 |  962 |
+
+### Graphical Summaries

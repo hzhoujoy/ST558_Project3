@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="st558_project3">ST558_Project3</h1>
+<p>Hui Fang and Joy Zhou 2023-11-02</p>
+<h1 id="introduction">Introduction</h1>
+<p>Diabetes is a seriously pervasive chronic disease that disrupts the
+body’s ability to regulate blood glucose levels, leading to a diminished
+quality of life and reduced life expectancy. It stands as one of the
+most prevalent chronic illnesses in the United States, impacting
+millions of Americans annually and imposing a significant economic
+burden on the nation.</p>
+<p>In this project, we will use the
+<code>diabetes binary health indicators</code> dataset obtained from <a href="https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset/">Kaggle</a>
+to conduct comprehensive exploratory data analysis (EDA) and develop
+predictive models. This dataset comprises 253,680 survey responses to
+the CDC’s BRFSS (Behavioral Risk Factor Surveillance System) from year
+2015. The primary target variable, <code>Diabetes_binary</code>, offers
+binary classification, distinguishing between 0 for no diabetes, and 1
+for prediabetes or diabetes. This dataset encompasses 21 feature
+variables and is not balanced. Detailed information of variable can be
+found <a href="https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset/?select=diabetes_binary_health_indicators_BRFSS2015.csv">here</a>.</p>
+<p>Our analysis will primarily focus on a subset of key variables,
+including High blood pressure (HighBP), High cholesterol (HighChol),
+cholesterol check (CholCheck), Body Mass Index (BMI), Smoker, Fruits,
+Veggies, and Age.<br />
+In our EDA phase, we will start by summarizing basic statistics
+visualizing variable frequencies. This will be followed by the
+exploration of correlations between variables and the creation of
+contingency tables to better understand the interplay of these
+factors.</p>
+<p>Based on the results from EDA, we will split the dataset into
+training (70%) and test (30%) subsets for each educational level.
+Subsequently, we will employ the training data to fit six distinct
+models, including a logistic regression, a LASSO logistic regression, a
+classification tree model, a random forest model, a xx model, as well as
+a xxx model. The performance of these models will be rigorously
+evaluated using the test dataset, and we will determine the most
+effective model for predicting diabetes outcomes.</p>
+<p>Description of variables in the data set:</p>
+<ul>
+<li>Diabetes_binary: 0 = no diabetes 1 = prediabetes or diabetes</li>
+<li>HighBP: High blood pressure</li>
+<li>HighChol: High cholesterol</li>
+<li>CholCheck: 0 = no cholesterol check in 5 years 1 = yes cholesterol
+check in 5 years</li>
+<li>BMI: Body Mass Index</li>
+<li>Smoker: Have you smoked at least 100 cigarettes in your entire life?
+0 = no 1 = yes</li>
+<li>Stroke: 0 = no 1 = yes</li>
+<li>HeartDiseaseorAttack: coronary heart disease (CHD) or myocardial
+infarction (MI) 0 = no 1 = yes</li>
+<li>PhysActivity: physical activity in past 30 days - not including job
+0 = no 1 = yes</li>
+<li>Fruits: Consume Fruit 1 or more times per day 0 = no 1 = yes</li>
+<li>Veggies: Consume Vegetables 1 or more times per day 0 = no 1 =
+yes</li>
+<li>HvyAlcoholConsump: (adult men &gt;=14 drinks per week and adult
+women&gt;=7 drinks per week) 0 = no 1 = yes</li>
+<li>AnyHealthcare: Health care coverage 0 = no 1 = yes</li>
+<li>NoDocbcCost: Was there a time in the past 12 months when you needed
+to see a doctor but could not because of cost? 0 = no 1 = yes</li>
+<li>GenHlth: in general your health is: scale 1-5 1 = excellent 2 = very
+good 3 = good 4 = fair 5 = poor</li>
+<li>MentHlth: days of poor mental health scale 1-30 days</li>
+<li>PhysHlth: physical illness or injury days in past 30 days scale
+1-30</li>
+<li>DiffWalk: Do you have serious difficulty walking or climbing stairs?
+0 = no 1 = yes</li>
+<li>Sex: 0 = female 1 = male</li>
+<li>Age: 13-level age category 1 = 18-24 2 = 25-29 3 = 30-34 4 = 35-39 5
+= 40-44 6 = 45-49 7 = 50-54 8 = 55-59 9 = 60-64 10 = 65-69 11 = 70-74 12
+= 75-79 13 = 80 or older</li>
+<li>Education: scale 1-6 1 = Never attended school or only kindergarten
+2 = Grades 1 through 8 (Elementary) 3 = Grades 9 through 11 (Some high
+school) 4 = Grade 12 or GED (High school graduate) 5 = College 1 year to
+3 years (Some college or technical school) 6 = College 4 years or more
+(College graduate)</li>
+<li>Income: scale 1-8 1 = less than $10,000 5 = less than $35,000 8 =
+$75,000 or more</li>
+</ul>
+<h1 id="data">Data</h1>
+<h2 id="read-in-data">Read in data</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>diabetes <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(<span class="fu">read.csv</span>(<span class="st">&quot;diabetes_binary_health_indicators_BRFSS2015.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diabetes)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 22
+##   Diabetes_binary HighBP
+##             &lt;dbl&gt;  &lt;dbl&gt;
+## 1               0      1
+## 2               0      0
+## 3               0      1
+## 4               0      1
+## 5               0      1
+## 6               0      1
+## # ℹ 20 more variables:
+## #   HighChol &lt;dbl&gt;,
+## #   CholCheck &lt;dbl&gt;, BMI &lt;dbl&gt;,
+## #   Smoker &lt;dbl&gt;, Stroke &lt;dbl&gt;,
+## #   HeartDiseaseorAttack &lt;dbl&gt;,
+## #   PhysActivity &lt;dbl&gt;,
+## #   Fruits &lt;dbl&gt;, …</code></pre>
+<h1 id="grouping-education-levels">grouping Education levels</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>diabetes<span class="sc">$</span>Education <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(diabetes<span class="sc">$</span>Education <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="st">&quot;SomeElementary&quot;</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">ifelse</span>(diabetes<span class="sc">$</span>Education <span class="sc">==</span> <span class="dv">3</span>, <span class="st">&quot;SomeHighSchool&quot;</span>, </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(diabetes<span class="sc">$</span>Education <span class="sc">==</span> <span class="dv">4</span>, <span class="st">&quot;HighSchool&quot;</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(diabetes<span class="sc">$</span>Education <span class="sc">==</span> <span class="dv">5</span>, <span class="st">&quot;SomeCollege&quot;</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">ifelse</span>(diabetes<span class="sc">$</span>Education <span class="sc">==</span> <span class="dv">6</span>, <span class="st">&quot;College&quot;</span>, <span class="cn">NA</span>)))))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>params<span class="sc">$</span>Edu</span></code></pre></div>
+<pre><code>## [1] &quot;SomeCollege&quot;</code></pre>
+<h2 id="subsetting-the-dataset-based-on-education-level">Subsetting the
+dataset based on education level</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>EducationData <span class="ot">&lt;-</span> <span class="fu">filter</span>(diabetes, (Education <span class="sc">==</span> params<span class="sc">$</span>Edu))</span></code></pre></div>
+<h2 id="eda">EDA</h2>
+<h3 id="checking-the-missing-values">Checking the missing values</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>missing_values <span class="ot">&lt;-</span> <span class="fu">colSums</span>(<span class="fu">is.na</span>(EducationData))</span></code></pre></div>
+<h3 id="summary-statistics-for-numeric-variables">Summary statistics for
+numeric variables</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter only numeric variables</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>numeric_vars <span class="ot">&lt;-</span> EducationData <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.numeric)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a summary table</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> numeric_vars <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(<span class="cf">function</span>(x) {</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>( <span class="at">count =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(x)),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">std =</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">min =</span> <span class="fu">min</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">Q1 =</span> <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">median =</span> <span class="fu">median</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">Q3 =</span> <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">max =</span> <span class="fu">max</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Transpose the summary table</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>transposed_summary_table <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">round</span>(summary_table, <span class="dv">2</span>)) </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(transposed_summary_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;count&quot;</span>, <span class="st">&quot;mean&quot;</span>, <span class="st">&quot;std&quot;</span>, </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;min&quot;</span>, <span class="st">&quot;Q1&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;Q3&quot;</span>, <span class="st">&quot;max&quot;</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the transposed table</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(transposed_summary_table)</span></code></pre></div>
+<pre><code>##                      count
+## Diabetes_binary      69910
+## HighBP               69910
+## HighChol             69910
+## CholCheck            69910
+## BMI                  69910
+## Smoker               69910
+## Stroke               69910
+## HeartDiseaseorAttack 69910
+## PhysActivity         69910
+## Fruits               69910
+## Veggies              69910
+## HvyAlcoholConsump    69910
+## AnyHealthcare        69910
+## NoDocbcCost          69910
+## GenHlth              69910
+## MentHlth             69910
+## PhysHlth             69910
+## DiffWalk             69910
+## Sex                  69910
+## Age                  69910
+## Income               69910
+##                       mean  std
+## Diabetes_binary       0.15 0.36
+## HighBP                0.44 0.50
+## HighChol              0.42 0.49
+## CholCheck             0.96 0.20
+## BMI                  28.88 6.76
+## Smoker                0.49 0.50
+## Stroke                0.04 0.20
+## HeartDiseaseorAttack  0.10 0.30
+## PhysActivity          0.74 0.44
+## Fruits                0.62 0.49
+## Veggies               0.81 0.39
+## HvyAlcoholConsump     0.06 0.23
+## AnyHealthcare         0.95 0.23
+## NoDocbcCost           0.10 0.30
+## GenHlth               2.58 1.05
+## MentHlth              3.65 7.93
+## PhysHlth              4.68 9.13
+## DiffWalk              0.19 0.39
+## Sex                   0.41 0.49
+## Age                   7.90 3.10
+## Income                5.88 2.00
+##                      min Q1
+## Diabetes_binary        0  0
+## HighBP                 0  0
+## HighChol               0  0
+## CholCheck              0  1
+## BMI                   12 24
+## Smoker                 0  0
+## Stroke                 0  0
+## HeartDiseaseorAttack   0  0
+## PhysActivity           0  0
+## Fruits                 0  0
+## Veggies                0  1
+## HvyAlcoholConsump      0  0
+## AnyHealthcare          0  1
+## NoDocbcCost            0  0
+## GenHlth                1  2
+## MentHlth               0  0
+## PhysHlth               0  0
+## DiffWalk               0  0
+## Sex                    0  0
+## Age                    1  6
+## Income                 1  5
+##                      median Q3
+## Diabetes_binary           0  0
+## HighBP                    0  1
+## HighChol                  0  1
+## CholCheck                 1  1
+## BMI                      28 32
+## Smoker                    0  1
+## Stroke                    0  0
+## HeartDiseaseorAttack      0  0
+## PhysActivity              1  1
+## Fruits                    1  1
+## Veggies                   1  1
+## HvyAlcoholConsump         0  0
+## AnyHealthcare             1  1
+## NoDocbcCost               0  0
+## GenHlth                   2  3
+## MentHlth                  0  2
+## PhysHlth                  0  4
+## DiffWalk                  0  0
+## Sex                       0  1
+## Age                       8 10
+## Income                    6  8
+##                      max
+## Diabetes_binary        1
+## HighBP                 1
+## HighChol               1
+## CholCheck              1
+## BMI                   98
+## Smoker                 1
+## Stroke                 1
+## HeartDiseaseorAttack   1
+## PhysActivity           1
+## Fruits                 1
+## Veggies                1
+## HvyAlcoholConsump      1
+## AnyHealthcare          1
+## NoDocbcCost            1
+## GenHlth                5
+## MentHlth              30
+## PhysHlth              30
+## DiffWalk               1
+## Sex                    1
+## Age                   13
+## Income                 8</code></pre>
+<p>The center and spread of each variable can be found in this
+table.</p>
+<h3 id="check-the-correlation-between-diabetes_binary-and-the-other-variables">Check
+the correlation between Diabetes_binary and the other variables</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a correlation matrix between variables</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Cor_Matrix <span class="ot">&lt;-</span> EducationData <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">select</span>(Diabetes_binary, BMI, MentHlth, PhysHlth, Age, Income) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>         <span class="fu">cor</span>()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Round the correlation matrix to two decimal places</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>rounded_Cor_Matrix <span class="ot">&lt;-</span> <span class="fu">round</span>(Cor_Matrix, <span class="at">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the rounded correlation matrix</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(rounded_Cor_Matrix)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Diabetes_binary</th>
+<th align="right">BMI</th>
+<th align="right">MentHlth</th>
+<th align="right">PhysHlth</th>
+<th align="right">Age</th>
+<th align="right">Income</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Diabetes_binary</td>
+<td align="right">1.00</td>
+<td align="right">0.21</td>
+<td align="right">0.06</td>
+<td align="right">0.16</td>
+<td align="right">0.18</td>
+<td align="right">-0.12</td>
+</tr>
+<tr class="even">
+<td align="left">BMI</td>
+<td align="right">0.21</td>
+<td align="right">1.00</td>
+<td align="right">0.09</td>
+<td align="right">0.13</td>
+<td align="right">-0.06</td>
+<td align="right">-0.06</td>
+</tr>
+<tr class="odd">
+<td align="left">MentHlth</td>
+<td align="right">0.06</td>
+<td align="right">0.09</td>
+<td align="right">1.00</td>
+<td align="right">0.36</td>
+<td align="right">-0.11</td>
+<td align="right">-0.21</td>
+</tr>
+<tr class="even">
+<td align="left">PhysHlth</td>
+<td align="right">0.16</td>
+<td align="right">0.13</td>
+<td align="right">0.36</td>
+<td align="right">1.00</td>
+<td align="right">0.09</td>
+<td align="right">-0.25</td>
+</tr>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">0.18</td>
+<td align="right">-0.06</td>
+<td align="right">-0.11</td>
+<td align="right">0.09</td>
+<td align="right">1.00</td>
+<td align="right">-0.08</td>
+</tr>
+<tr class="even">
+<td align="left">Income</td>
+<td align="right">-0.12</td>
+<td align="right">-0.06</td>
+<td align="right">-0.21</td>
+<td align="right">-0.25</td>
+<td align="right">-0.08</td>
+<td align="right">1.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="visualization-of-correlation-with-diabetes_binary-through-bar-graph">Visualization
+of correlation with <code>Diabetes_binary</code> through bar graph</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude the character variable from the data</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> EducationData[, <span class="sc">!</span>(<span class="fu">names</span>(EducationData) <span class="sc">%in%</span> <span class="st">&quot;Education&quot;</span>)]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the correlation of each variable with &#39;Diabetes_binary&#39;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>correlations <span class="ot">&lt;-</span> <span class="fu">sapply</span>(data[<span class="sc">-</span><span class="dv">1</span>], <span class="cf">function</span>(x) <span class="fu">cor</span>(x, data<span class="sc">$</span>Diabetes_binary))</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame for the correlations</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>correlation_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Variable =</span> <span class="fu">names</span>(correlations), <span class="at">Correlation =</span> correlations)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar chart of correlations</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(correlation_data, <span class="fu">aes</span>(<span class="at">x =</span> Variable, <span class="at">y =</span> Correlation)) <span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;orange&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Correlation with Diabetes_binary&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Variable&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Correlation&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) </span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># coord_flip()  # Rotate the x-axis labels for better readability</span></span></code></pre></div>
+<p>n this chart, some of the variables exhibited positive correlations
+with ‘Diabetes_binary,’ while others showed negative correlations with
+it.</p>
+<h3 id="convert-some-variables-to-factor">Convert some variables to
+factor</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>Diabetes_binary <span class="ot">&lt;-</span> <span class="fu">factor</span>(EducationData<span class="sc">$</span>Diabetes_binary, </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;NonDiabetes&quot;</span>, <span class="st">&quot;Diabetes&quot;</span>))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>Income <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>Income)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>Education <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>Education)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>HighBP <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>HighBP)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>HighChol <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>HighChol)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>Sex <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>Sex)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>Fruits <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>Fruits)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>Veggies <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>Veggies)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>CholCheck <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>CholCheck)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>Smoker <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>Smoker)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>Stroke <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>Stroke)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>HeartDiseaseorAttack <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>HeartDiseaseorAttack)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>PhysActivity <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>PhysActivity)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>HvyAlcoholConsump <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>HvyAlcoholConsump)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>AnyHealthcare <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>AnyHealthcare)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>NoDocbcCost <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>NoDocbcCost)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>EducationData<span class="sc">$</span>DiffWalk <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EducationData<span class="sc">$</span>DiffWalk)</span></code></pre></div>
+<h3 id="summary-statistics-for-character-variables">Summary statistics
+for Character variables</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># one-way table</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(EducationData<span class="sc">$</span>Diabetes_binary))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Var1</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NonDiabetes</td>
+<td align="right">59556</td>
+</tr>
+<tr class="even">
+<td align="left">Diabetes</td>
+<td align="right">10354</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(EducationData<span class="sc">$</span>HighBP))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Var1</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="right">39019</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">30891</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(EducationData<span class="sc">$</span>HighChol))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Var1</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="right">40223</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">29687</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(EducationData<span class="sc">$</span>Fruits))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Var1</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="right">26603</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">43307</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(EducationData<span class="sc">$</span>Veggies))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Var1</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="right">13136</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">56774</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># two-way table</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(EducationData<span class="sc">$</span>Diabetes_binary, EducationData<span class="sc">$</span>Sex))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">0</th>
+<th align="right">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NonDiabetes</td>
+<td align="right">35539</td>
+<td align="right">24017</td>
+</tr>
+<tr class="even">
+<td align="left">Diabetes</td>
+<td align="right">5683</td>
+<td align="right">4671</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(EducationData<span class="sc">$</span>Diabetes_binary, EducationData<span class="sc">$</span>HighBP))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">0</th>
+<th align="right">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NonDiabetes</td>
+<td align="right">36499</td>
+<td align="right">23057</td>
+</tr>
+<tr class="even">
+<td align="left">Diabetes</td>
+<td align="right">2520</td>
+<td align="right">7834</td>
+</tr>
+</tbody>
+</table>
+<h3 id="graphical-summaries">Graphical Summaries</h3>
+
+</body>
+</html>
