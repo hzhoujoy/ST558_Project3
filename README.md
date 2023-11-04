@@ -10,10 +10,6 @@ The following R packages used for this project:
 + [`shiny`](https://cran.r-project.org/web/packages/shiny/index.html)
 + [`DT`](https://rstudio.github.io/DT/)
 
-```
-npm install marked 
-```
-
 The code used to create the analyses from a single .Rmd file (i.e. the render() code)
 ```
 library(rmarkdown)
